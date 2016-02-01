@@ -11,7 +11,7 @@ angular.module('myApp')
             age: '28'
         };
 
-        var serializerDefault = true; // if true pa
+        var serializerDefault = true; // if true - parameters will transfer like "?param1=n&param2=m", else "/param1/n/param2/m"
 
         var service = new Service(params, data, serializerDefault);
 
