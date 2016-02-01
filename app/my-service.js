@@ -1,16 +1,16 @@
 angular.module('myApp')
     .factory('Service', ['$http', '$log', '$resource', function($http, $log, $resource) {
 
-        function Resource(params, data, serializedDefault) {
-            this.url = 'https://aqueous-reaches-8130.herokuapp.com/check-email/'; //url for axample
+        function Resource(params, data, serializerDefault) {
+            this.url = 'https://aqueous-reaches-8130.herokuapp.com/check-email/'; //url for example
             this.params = params;
             this.data = data;
-            this.serializedDefault = serializedDefault;
+            this.serializerDefault = serializerDefault;
         }
 
         // define instance methods
         Resource.prototype.get = function() {
-            if (this.serializedDefault) {
+            if (this.serializerDefault) {
                 $http.get(this.url, {
                     params: this.params,
                 }).then(function successCallback(response) {
